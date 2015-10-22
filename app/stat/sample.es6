@@ -5,6 +5,15 @@ export default class Sample
     this.data = data;
   }
 
+  median()
+  {
+    let n = this.data.length;
+    let half = Math.floor(n / 2);
+    let sorted = this.data.sort((a, b) => a - b);
+
+    return n % 2 == 0 ? (sorted[half - 1] + sorted[half]) / 2 : sorted[half];
+  }
+
   mean()
   {
     // мат. ожидание
