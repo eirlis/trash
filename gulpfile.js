@@ -11,7 +11,7 @@ gulp.task("transpile", function () {
 
 
 gulp.task("copy", function () {
-    return gulp.src("app/index.html")
+    return gulp.src("app/app.html")
                .pipe(gulp.dest("dist/"));
 });
 

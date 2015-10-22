@@ -1,5 +1,6 @@
 {
   "name": "lab2",
+  "main": "dist/main.js",
   "devDependencies": {
     "electron-prebuilt": "^0.34.0",
     "gulp": "^3.9.0",
