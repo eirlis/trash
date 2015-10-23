@@ -22,6 +22,7 @@ app.on("ready", () => {
   });
 
   mainWindow.loadUrl("file://" + __dirname + "/app.html");
+  mainWindow.openDevTools();
 
   mainWindow.on("closed", () => {
     mainWindow = null;
