@@ -9,7 +9,8 @@ export default class Sample
   {
     let n = this.data.length;
     let half = Math.floor(n / 2);
-    let sorted = this.data.sort((a, b) => a - b);
+    let copy = this.data.slice(0);
+    let sorted = copy.sort((a, b) => a - b);
 
     return n % 2 == 0 ? (sorted[half - 1] + sorted[half]) / 2 : sorted[half];
   }

@@ -23,6 +23,7 @@ export default class RunsTest
     let condString = vn + " > " + v + " && " + tn + " < " + t;
 
     return {
+      series: series,
       vn: vn,
       tn: tn,
       v: v,
@@ -61,6 +62,7 @@ export default class RunsTest
     let condString = vn + " > " + v + " && " + tn + " < " + t;
 
     return {
+      series: series,
       vn: vn,
       tn: tn,
       v: v,
