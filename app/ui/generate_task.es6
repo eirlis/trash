@@ -50,11 +50,11 @@ export default class GenerateTask extends React.Component
       case "uniform":
         return (
           <div>
-            <h6></h6>
+            <h6>Начало:</h6>
             <TextField ref="uniform_start" key="uniform_start" text={this.props.samples.uniform.start} />
-            <h6></h6>
+            <h6>Конец:</h6>
             <TextField ref="uniform_end" key="uniform_end" text={this.props.samples.uniform.end} />
-            <h6></h6>
+            <h6>Размер выборки:</h6>
             <TextField ref="uniform_size" key="uniform_size" text={this.props.samples.uniform.size} />
           </div>
         );
