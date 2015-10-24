@@ -10,6 +10,7 @@ import TextField from "./components/text_field";
 import UniformDistribution from "../stat/uniform_distribution";
 import ExponentialDistribution from "../stat/exponential_distribution";
 import NormalDistribution from "../stat/normal_distribution";
+import getStandOutElement from "../stat/stand_out";
 
 
 function interval(bin, closed)
@@ -137,12 +138,18 @@ export default class GenerateTask extends React.Component
   generateNormal()
   {
     let samples = this.props.samples;
+    let standOutElement = undefined;
 
     samples.normal.mean = parseFloat(this.refs.normal_mean.getText());
     samples.normal.std = parseFloat(this.refs.normal_std.getText());
     samples.normal.size = parseFloat(this.refs.normal_size.getText());
-    samples.normal.sample = new NormalDistribution(samples.normal.mean,
-      samples.normal.std).generate(samples.normal.size);
+
+    do
+    {
+      samples.normal.sample = new NormalDistribution(samples.normal.mean,
+        samples.normal.std).generate(samples.normal.size);
+      standOutElement = getStandOutElement(samples.normal.sample);
+    } while (standOutElement === undefined);
   }
 
   onGenerate()

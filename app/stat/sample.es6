@@ -69,4 +69,9 @@ export default class Sample
 
     return bins;
   }
+
+  scatter()
+  {
+    return this.data.map((value, i) => { return { x: i, y: value }; });
+  }
 }

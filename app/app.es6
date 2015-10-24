@@ -8,6 +8,7 @@ import StandOutTask from "./ui/stand_out_task";
 import UniformDistribution from "./stat/uniform_distribution";
 import ExponentialDistribution from "./stat/exponential_distribution";
 import NormalDistribution from "./stat/normal_distribution";
+import getStandOutElement from "./stat/stand_out";
 
 
 class Root extends React.Component
@@ -37,8 +38,14 @@ class Root extends React.Component
       this.samples.uniform.end).generate(this.samples.uniform.size);
     this.samples.exponential.sample = new ExponentialDistribution(this.samples.exponential.lambda)
       .generate(this.samples.exponential.size);
-    this.samples.normal.sample = new NormalDistribution(this.samples.normal.mean,
-      this.samples.normal.std).generate(this.samples.normal.size);
+
+    let standOutElement = undefined;
+    do
+    {
+      this.samples.normal.sample = new NormalDistribution(this.samples.normal.mean,
+        this.samples.normal.std).generate(this.samples.normal.size);
+      standOutElement = getStandOutElement(this.samples.normal.sample);
+    } while (standOutElement === undefined);
   }
 
   render()
