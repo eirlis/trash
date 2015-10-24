@@ -10,6 +10,10 @@ export default class StandOutTask extends React.Component
     super(props);
   }
 
+  update()
+  {
+  }
+
   render()
   {
     return(

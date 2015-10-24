@@ -49,15 +49,17 @@ class Root extends React.Component
 
     return (
       <Container style={containerStyle}>
-        <GenerateTask samples={this.samples} onNewSample={this.onNewSample} />
-        <RunsTestTask samples={this.samples} />
-        <StandOutTask samples={this.samples} />
+        <GenerateTask ref="generate" samples={this.samples} onNewSample={this.onNewSample.bind(this)} />
+        <RunsTestTask ref="runs" samples={this.samples} />
+        <StandOutTask ref="standout" samples={this.samples} />
       </Container>
     );
   }
 
   onNewSample()
   {
+    this.refs.runs.update();
+    this.refs.standout.update();
   }
 }
 
